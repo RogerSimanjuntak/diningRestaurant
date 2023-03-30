@@ -11,12 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiningRestaurant"
         tools:targetApi="31">
+
         <activity
             android:name=".splashscreen.SplashScreen"
             android:exported="true"
             android:theme="@style/SplassScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
