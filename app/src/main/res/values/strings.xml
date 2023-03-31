@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Dining Restaurant</string>
+    <string name="title_activity_navigationdrawer">NavigationdrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Los Pollos Hermanos</string>
+    <string name="nav_header_subtitle">Admin Panel</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_list_item"> List Item</string>
+    <string name="menu_gallery"> Cashier</string>
+    <string name="menu_slideshow"> Kitchen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
