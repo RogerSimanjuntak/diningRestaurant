@@ -11,6 +11,8 @@
     <string name="menu_list_item"> List Item</string>
     <string name="menu_gallery"> Cashier</string>
     <string name="menu_slideshow"> Kitchen</string>
+    <string name="deskripsi_harga">Rp.50.000</string>
+    <string name="deskripsi_food">Makanannya Enak Bang</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

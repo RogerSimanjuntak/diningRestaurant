@@ -8,7 +8,9 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        app:cardElevation="15dp"
+        app:cardCornerRadius="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,6 +19,7 @@
 
             <!-- Media -->
             <ImageView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/image_food"
@@ -41,6 +44,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/menu_list_item"
                     android:textSize="25dp"
+                    android:id="@+id/name_food"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
@@ -49,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textSize="20dp"
+                    android:id="@+id/food_deskripsi"
                     android:text="@string/deskripsi_food"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
@@ -59,8 +64,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/deskripsi_harga"
+                    android:id="@+id/harga_food"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary"
+                    android:textColor="@color/orange"
                     android:textSize="25dp"
                     />
 
@@ -75,19 +81,26 @@
                 android:gravity="center"
                 android:layout_below="@+id/deskripsi_food"
                 >
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/action_1"
-                    style="?attr/borderlessButtonStyle"
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="150dp"
+
+                    android:background="@drawable/roundedyellow"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/baseline_edit_24"
+
                     />
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="tes"
+
+                <ImageButton
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/baseline_delete_24"
                     android:background="@drawable/round_button"
-                    style="?attr/borderlessButtonStyle"
+                    android:scaleType="fitCenter"
+                    style=""
                     />
             </LinearLayout>
 
