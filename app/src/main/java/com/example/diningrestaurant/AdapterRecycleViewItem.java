@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.diningrestaurant.fragment.KasirFragment;
+
 import java.util.ArrayList;
 
 import java.util.ArrayList;
@@ -16,7 +18,10 @@ import java.util.ArrayList;
 public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycleViewItem.ViewHolder> {
     ArrayList<itemModel> dataItem;
 
-public class ViewHolder extends RecyclerView.ViewHolder {
+    public AdapterRecycleViewItem(KasirFragment kasirFragment, ArrayList<kasirModel> parentItemArrayList, ArrayList<KasiritemModel> childItemArrayList) {
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
     TextView textFood;
     TextView textDeskripsi;
     TextView textHarga;
