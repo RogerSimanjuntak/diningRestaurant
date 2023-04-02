@@ -33,7 +33,7 @@ public class listItemFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setNestedScrollingEnabled(false);
 
-        layoutManager = new  GridLayoutManager(getActivity(),3);
+        layoutManager = new  GridLayoutManager(getActivity(),4);
         recyclerView.setLayoutManager(layoutManager);
         data = new ArrayList<>();
         for (int i = 0; i < itemFood.judulItem.length; i++){

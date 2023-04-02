@@ -7,40 +7,37 @@
     tools:context=".fragment.listItemFragment"
 
     >
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="List Item"
-    android:layout_gravity="center|top"
-    android:layout_marginTop="34dp"
-    android:layout_marginLeft="150dp"
-    android:textSize="45dp"
-    android:fontFamily="@font/poppins_medium"
-    />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:layout_marginLeft="320dp"
-        android:orientation="horizontal">
-
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_food"
-            android:nestedScrollingEnabled="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="150dp"
+            android:nestedScrollingEnabled="false"
             tools:listitem="@layout/grid_list_item" />
-    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="320dp"
-        android:layout_height="1000dp"
-        android:background="#673AB7"
-        tools:src="@tools:sample/avatars" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:id="@+id/container_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:layout_margin="32dp"
+                            app:fabSize="normal"
+                            android:src="@drawable/baseline_add_24"
+                            app:backgroundTint="@color/colorPrimary" />
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>
+
