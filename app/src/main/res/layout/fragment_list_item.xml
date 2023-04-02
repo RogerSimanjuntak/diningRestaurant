@@ -4,15 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.listItemFragment">
+    tools:context=".fragment.listItemFragment"
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_food"
-        android:layout_width="500dp"
-        android:layout_height="700dp"
-        android:layout_margin="330dp"
+    >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="List Item"
+    android:layout_gravity="center|top"
+    android:layout_marginTop="34dp"
+    android:layout_marginLeft="150dp"
+    android:textSize="45dp"
+    android:fontFamily="@font/poppins_medium"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginLeft="320dp"
+        android:orientation="horizontal">
 
-        tools:listitem="@layout/grid_list_item" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_food"
+            android:nestedScrollingEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
+            tools:listitem="@layout/grid_list_item" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
@@ -20,6 +41,6 @@
         android:layout_height="1000dp"
         android:background="#673AB7"
         tools:src="@tools:sample/avatars" />
-    
+
 
 </FrameLayout>

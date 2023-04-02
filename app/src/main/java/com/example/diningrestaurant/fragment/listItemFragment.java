@@ -26,10 +26,13 @@ public class listItemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_list_item, container, false);
         recyclerView = view.findViewById(R.id.list_food);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new  GridLayoutManager(getActivity(),2);
+        recyclerView.setNestedScrollingEnabled(false);
+
+        layoutManager = new  GridLayoutManager(getActivity(),3);
         recyclerView.setLayoutManager(layoutManager);
         data = new ArrayList<>();
         for (int i = 0; i < itemFood.judulItem.length; i++){
