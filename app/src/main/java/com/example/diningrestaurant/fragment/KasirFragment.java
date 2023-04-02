@@ -10,12 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.diningrestaurant.AdapterRecycleViewItem;
-import com.example.diningrestaurant.KasiritemModel;
+import com.example.diningrestaurant.modelXadapterKasir.KasiritemModel;
 import com.example.diningrestaurant.R;
-import com.example.diningrestaurant.adapterKasir;
-import com.example.diningrestaurant.itemModel;
-import com.example.diningrestaurant.kasirModel;
+import com.example.diningrestaurant.modelXadapterKasir.adapterKasir;
+import com.example.diningrestaurant.modelXadapterKasir.kasirModel;
 
 import java.util.ArrayList;
 

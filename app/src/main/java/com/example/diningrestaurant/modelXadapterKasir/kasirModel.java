@@ -1,6 +1,4 @@
-package com.example.diningrestaurant;
-
-import java.util.List;
+package com.example.diningrestaurant.modelXadapterKasir;
 
 public class kasirModel {
     Integer nomormeja;

@@ -10,9 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.diningrestaurant.AdapterRecycleViewItem;
+import com.example.diningrestaurant.modelXadapterItem.itemFood;
+import com.example.diningrestaurant.modelXadapterItem.AdapterRecycleViewItem;
 import com.example.diningrestaurant.R;
-import com.example.diningrestaurant.itemModel;
+import com.example.diningrestaurant.modelXadapterItem.itemModel;
 
 import java.util.ArrayList;
 

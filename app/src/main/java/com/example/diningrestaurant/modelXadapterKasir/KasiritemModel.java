@@ -1,4 +1,4 @@
-package com.example.diningrestaurant;
+package com.example.diningrestaurant.modelXadapterKasir;
 
 public class KasiritemModel {
 

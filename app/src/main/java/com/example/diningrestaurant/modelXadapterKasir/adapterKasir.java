@@ -1,4 +1,4 @@
-package com.example.diningrestaurant;
+package com.example.diningrestaurant.modelXadapterKasir;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.diningrestaurant.R;
 
 import java.util.ArrayList;
 

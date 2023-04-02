@@ -1,4 +1,4 @@
-package com.example.diningrestaurant;
+package com.example.diningrestaurant.modelXadapterItem;
 
 public class itemModel {
     String name, deskripsi,price;
