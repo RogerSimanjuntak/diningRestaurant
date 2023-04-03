@@ -31,11 +31,11 @@ public class KasirFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_kasir, container, false);
         recyclerView = view.findViewById(R.id.reckasirfrag);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new GridLayoutManager(getActivity(),4);
+        layoutManager = new GridLayoutManager(getActivity(),3);
         recyclerView.setLayoutManager(layoutManager);
 
         Integer[] nomormeja = {11, 22, 33, 44, 55, 66, 77, 88};
-        String[] itemdibeli = {"koka kolha", "ciken ayam goreng", "berger mekdi", "fat frais", "minuman"};
+        String[] itemdibeli = {"Koka Kolha", "Ciken Ayam Goyeng", "Berger Mekdi", "Fat Frais", "Minuman"};
         String[] hargaitemdibeli = {"Rp. 12.000", "Rp. 12.000", "Rp. 12.000", "Rp. 12.000", "Rp. 12.000"};
 
         parentItemArrayList = new ArrayList<>();
