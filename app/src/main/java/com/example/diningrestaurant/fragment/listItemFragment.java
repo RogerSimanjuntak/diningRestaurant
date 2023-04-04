@@ -23,8 +23,8 @@ public class listItemFragment extends Fragment {
     AdapterRecycleViewItem adapterRecycleViewItem;
     RecyclerView.LayoutManager layoutManager;
     ArrayList <itemModel> data;
-    private Button addButton;
-    Button button;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,7 +51,6 @@ public class listItemFragment extends Fragment {
 
 
 //    Section Button
-
 
         return view;
     }
