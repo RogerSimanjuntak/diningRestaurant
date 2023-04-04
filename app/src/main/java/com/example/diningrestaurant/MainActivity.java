@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.example.diningrestaurant.fragment.DapurFragment;
 import com.example.diningrestaurant.fragment.KasirFragment;
@@ -15,7 +16,7 @@ import com.example.diningrestaurant.fragment.listItemFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    public Button addButton,deleteButton,saveButton,cancelButton;
     private DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -29,9 +29,9 @@ public class DialogEdit extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.popupedititem,null);
 //            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
-  //          View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
-    //        builder.setView(dialogView);
-      //      builder.show();
+//            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
+//            builder.setView(dialogView);
+//            builder.show();
         builder.setView(view).setTitle("Edit Item").setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

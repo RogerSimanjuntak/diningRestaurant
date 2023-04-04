@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.GnssAntennaInfo;
+import android.media.Image;
 import android.net.sip.SipSession;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +35,8 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+
         Button editButton;
         Button deleteButton;
         Button saveButton;
@@ -50,8 +54,9 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
             textHarga = itemView.findViewById(R.id.harga_food);
             editButton = itemView.findViewById(R.id.editButton);
             deleteButton = itemView.findViewById(R.id.deleteButton);
+            cancelButton = itemView.findViewById(R.id.cancel_button);
             saveButton = itemView.findViewById(R.id.submitButton);
-            cancelButton = itemView.findViewById(R.id.submitButton);
+
         }
 
     }
@@ -77,23 +82,74 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     text_harga.setText(dataItem.get(position).getPrice());
     image_poster.setImageResource(dataItem.get(position).getPoster());
 
+//        holder.cancelButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cancelDialog(view);
+//            }
+//        });
 
     holder.editButton.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View view) {
-//            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
-//            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
-//            builder.setView(dialogView);
-//            builder.show();
+        public void onClick(View view ) {
+
             openDialog(view);
+
         }
 
     });
 
+
         }
-public void openDialog(View view){
-        Dialog dialog = new Dialog(view.getContext());
-        dialog.setContentView(R.layout.popupedititem);
+    AlertDialog.Builder dialogBuilder;
+    AlertDialog dialog;
+    Button saveButton;
+    Button cancelButton;
+    ImageView imageEdit;
+    public void openDialog(View view){
+    dialogBuilder = new AlertDialog.Builder(view.getContext());
+    View EditpopupView = LayoutInflater.from(view.getContext()).inflate(R.layout.popupedititem,null);
+    dialogBuilder.setView(EditpopupView);
+    dialog =dialogBuilder.create();
+    dialog.show();
+
+    saveButton = EditpopupView.findViewById(R.id.submitButton);
+    cancelButton = EditpopupView.findViewById(R.id.cancel_button);
+    cancelButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            dialog.dismiss();
+        }
+    });
+    saveButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(dialog.getContext(), "Item Berhasil Diganti", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        }
+    });
+//    Dialog dialog =new Dialog(view.getContext());
+//    View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
+//    dialog.setView(dialogView);
+//     dialog.show();
+
+//        AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
+//        View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
+//        builder.setView(dialogView);
+//        builder.create();
+//        Button cancelButton =dialogView.findViewById(R.id.cancel_button);
+//        cancelButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                builder.
+//            }
+//        });
+//        builder.show();
+
+    }
+public void cancelDialog(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+
 }
 
     @Override
