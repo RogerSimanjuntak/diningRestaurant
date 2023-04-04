@@ -1,6 +1,7 @@
 package com.example.diningrestaurant.modelXadapterItem;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.GnssAntennaInfo;
@@ -80,18 +81,19 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     holder.editButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
-            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
-            builder.setView(dialogView);
-            builder.show();
-
+//            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
+//            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
+//            builder.setView(dialogView);
+//            builder.show();
+            openDialog(view);
         }
 
     });
 
         }
-public void openDialog(){
-        DialogEdit dialogEdit = new DialogEdit();
+public void openDialog(View view){
+        Dialog dialog = new Dialog(view.getContext());
+        dialog.setContentView(R.layout.popupedititem);
 }
 
     @Override
