@@ -12,7 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/orangekartu">
 
 
         <TextView
@@ -21,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="20dp"
-            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
             android:gravity="center"/>
 
         <androidx.cardview.widget.CardView
@@ -32,6 +33,7 @@
             android:layout_marginBottom="10dp"
             app:cardElevation="15dp"
             app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="@color/kuningkartu"
             >
 
             <androidx.recyclerview.widget.RecyclerView

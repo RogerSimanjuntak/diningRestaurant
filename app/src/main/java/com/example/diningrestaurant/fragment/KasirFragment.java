@@ -1,7 +1,9 @@
 package com.example.diningrestaurant.fragment;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.diningrestaurant.modelXadapterKasir.KasiritemModel;
 import com.example.diningrestaurant.R;
@@ -23,6 +27,8 @@ public class KasirFragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<kasirModel> parentItemArrayList;
     ArrayList<KasiritemModel> childItemArrayList;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,5 +61,8 @@ public class KasirFragment extends Fragment {
         adapterRecycleViewItem = new adapterKasir(parentItemArrayList, childItemArrayList);
         recyclerView.setAdapter(adapterRecycleViewItem);
         return view;
+
+
     }
+
 }
