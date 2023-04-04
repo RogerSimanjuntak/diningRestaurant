@@ -1,15 +1,24 @@
 package com.example.diningrestaurant.modelXadapterItem;
 
+import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.location.GnssAntennaInfo;
+import android.net.sip.SipSession;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.diningrestaurant.MainActivity;
 import com.example.diningrestaurant.R;
+import com.example.diningrestaurant.fragment.DialogEdit;
 import com.example.diningrestaurant.fragment.KasirFragment;
 import com.example.diningrestaurant.modelXadapterKasir.KasiritemModel;
 import com.example.diningrestaurant.modelXadapterKasir.kasirModel;
@@ -23,6 +32,10 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        Button editButton;
+        Button deleteButton;
+        Button saveButton;
+        Button cancelButton;
     TextView textFood;
     TextView textDeskripsi;
     TextView textHarga;
@@ -34,7 +47,12 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
             textFood = itemView.findViewById(R.id.name_food);
             textDeskripsi = itemView.findViewById(R.id.food_deskripsi);
             textHarga = itemView.findViewById(R.id.harga_food);
+            editButton = itemView.findViewById(R.id.editButton);
+            deleteButton = itemView.findViewById(R.id.deleteButton);
+            saveButton = itemView.findViewById(R.id.submitButton);
+            cancelButton = itemView.findViewById(R.id.submitButton);
         }
+
     }
     public AdapterRecycleViewItem(ArrayList<itemModel> data){
     this.dataItem= data;
@@ -57,7 +75,24 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     text_deskripsi.setText(dataItem.get(position).getDeskripsi());
     text_harga.setText(dataItem.get(position).getPrice());
     image_poster.setImageResource(dataItem.get(position).getPoster());
-    }
+
+
+    holder.editButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
+            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
+            builder.setView(dialogView);
+            builder.show();
+
+        }
+
+    });
+
+        }
+public void openDialog(){
+        DialogEdit dialogEdit = new DialogEdit();
+}
 
     @Override
     public int getItemCount() {

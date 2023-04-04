@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.diningrestaurant.modelXadapterItem.itemFood;
 import com.example.diningrestaurant.modelXadapterItem.AdapterRecycleViewItem;
@@ -22,7 +23,8 @@ public class listItemFragment extends Fragment {
     AdapterRecycleViewItem adapterRecycleViewItem;
     RecyclerView.LayoutManager layoutManager;
     ArrayList <itemModel> data;
-
+    private Button addButton;
+    Button button;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class listItemFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setNestedScrollingEnabled(false);
 
-        layoutManager = new  GridLayoutManager(getActivity(),4);
+        layoutManager = new  GridLayoutManager(getActivity(),3);
         recyclerView.setLayoutManager(layoutManager);
         data = new ArrayList<>();
         for (int i = 0; i < itemFood.judulItem.length; i++){
@@ -46,6 +48,11 @@ public class listItemFragment extends Fragment {
         }
         adapterRecycleViewItem = new AdapterRecycleViewItem(data);
         recyclerView.setAdapter(adapterRecycleViewItem);
+
+
+//    Section Button
+
+
         return view;
     }
 }
