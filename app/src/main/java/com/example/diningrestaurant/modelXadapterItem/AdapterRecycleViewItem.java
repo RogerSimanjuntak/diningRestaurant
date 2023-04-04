@@ -41,6 +41,7 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
         Button deleteButton;
         Button saveButton;
         Button cancelButton;
+        Button addButton;
     TextView textFood;
     TextView textDeskripsi;
     TextView textHarga;
@@ -88,12 +89,23 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
 //                cancelDialog(view);
 //            }
 //        });
-
+//        holder.addButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(view.getContext(), "Ini menu tAmbah", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    holder.deleteButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            deleteToast(view);
+        }
+    });
     holder.editButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view ) {
 
-            openDialog(view);
+            openDialogEdit(view);
 
         }
 
@@ -102,15 +114,23 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
 
         }
     AlertDialog.Builder dialogBuilder;
+
     AlertDialog dialog;
     Button saveButton;
     Button cancelButton;
     ImageView imageEdit;
-    public void openDialog(View view){
+
+    public void deleteToast(View view){
+        Toast.makeText(view.getContext(), "Item Dihapus", Toast.LENGTH_SHORT).show();
+    }
+//    EDIT DIALOG PEMBUKA
+    public void openDialogEdit(View view){
     dialogBuilder = new AlertDialog.Builder(view.getContext());
     View EditpopupView = LayoutInflater.from(view.getContext()).inflate(R.layout.popupedititem,null);
     dialogBuilder.setView(EditpopupView);
+
     dialog =dialogBuilder.create();
+    dialog.getWindow().setBackgroundDrawableResource(R.drawable.textfieldradius);
     dialog.show();
 
     saveButton = EditpopupView.findViewById(R.id.submitButton);
@@ -128,6 +148,7 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
             dialog.dismiss();
         }
     });
+    
 //    Dialog dialog =new Dialog(view.getContext());
 //    View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
 //    dialog.setView(dialogView);
@@ -147,6 +168,7 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
 //        builder.show();
 
     }
+//    EDIT DIALOG PENUTUP
 public void cancelDialog(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
 
