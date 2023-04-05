@@ -9,6 +9,7 @@
 
 
     <androidx.cardview.widget.CardView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -19,7 +20,8 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/cardForm">
     <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -31,36 +33,70 @@
     android:textStyle="bold"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/CardView"
-            android:id="@+id/TextItem"
-
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nomor Meja"
-
-            android:layout_gravity="center_vertical"
+            android:hint="@string/selectmeja"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="100dp"
             android:layout_marginStart="150dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/judulPemesanan"
             app:startIconDrawable="@drawable/baseline_table_restaurant_24"
             >
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:counterEnabled="true"
-                app:counterMaxLength="20"
-                android:maxLength="2"
-                />
+                android:id="@+id/autoComplete_meja"
+                android:inputType="none"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:layout_marginEnd="100dp"-->
+<!--            android:layout_marginStart="150dp"-->
+<!--            android:hint="@string/select"-->
+<!--            app:startIconDrawable="@drawable/baseline_fastfood_24"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            >-->
+<!--            <AutoCompleteTextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/autoComplete_item"-->
+<!--                android:inputType="none"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="150dp"
+            android:hint="@string/select"
+            app:startIconDrawable="@drawable/baseline_fastfood_24"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:visibility="gone"
+            >
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/autoComplete_plus"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addButton"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="50dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/cardForm"></Button>
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>
