@@ -1,6 +1,7 @@
 package com.example.diningrestaurant.modelXadapterKasir;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -55,7 +56,10 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
         holder.nested_rv.setAdapter(adapterMember);
 
         holder.cardView.setOnClickListener(e->{
-
+            AlertDialog.Builder builder = new AlertDialog.Builder(e.getContext());
+            View dialogView = LayoutInflater.from(e.getContext()).inflate(R.layout.popupkasir,null);
+            builder.setView(dialogView);
+            builder.show();
         });
     }
 

@@ -23,42 +23,31 @@ public class DialogEdit extends AppCompatDialogFragment {
     private Button buttonSubmit;
     private Button buttonCancel;
     @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.popupedititem,null);
+//            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
+//            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
+//            builder.setView(dialogView);
+//            builder.show();
+        builder.setView(view).setTitle("Edit Item").setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
 
-    public Dialog onCreateDialog(View view) {
+            }
+        })
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
-        View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
-        builder.setView(dialogView);
-        builder.show();
-
-
-//        NYOBA DULU LAH BABI
-//        AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
-//        LayoutInflater inflater = getActivity().getLayoutInflater();
-//        View view = inflater.inflate(R.layout.popupedititem,null);
-//
-//
-////            AlertDialog.Builder builder = new AlertDialog.Builder(view.getRootView().getContext());
-////            View dialogView = LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.popupedititem,null);
-////            builder.setView(dialogView);
-////            builder.show();
-//        builder.setView(view).setTitle("Edit Item").setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//
-//            }
-//        })
-//                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                });
-//        editTextItem = view.findViewById(R.id.TextItem);
-//        editHargaItem = view.findViewById(R.id.textHarga);
-//        editDeskripsiItem = view.findViewById(R.id.textDeskripsiItem);
-       return builder.create();
+                    }
+                });
+        editTextItem = view.findViewById(R.id.TextItem);
+        editHargaItem = view.findViewById(R.id.textHarga);
+        editDeskripsiItem = view.findViewById(R.id.textDeskripsiItem);
+        return builder.create();
 
     }
 }
