@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.example.diningrestaurant.fragment.DapurFragment;
 import com.example.diningrestaurant.fragment.KasirFragment;
+import com.example.diningrestaurant.fragment.PemesenanFragment;
 import com.example.diningrestaurant.fragment.listItemFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_kasir:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new KasirFragment()).commit();
+                break;
+            case R.id.nav_pesan:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PemesenanFragment()).commit();
                 break;
         }
     return true;

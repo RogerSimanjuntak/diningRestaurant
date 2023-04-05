@@ -17,6 +17,10 @@
             android:id="@+id/nav_dapur"
             android:icon="@drawable/baseline_soup_kitchen_24"
             android:title="Kitchen"/>
+        <item
+            android:id="@+id/nav_pesan"
+            android:icon="@drawable/baseline_restaurant_menu_24"
+            android:title="Ordering Customer"/>
 
 
     </group>
