@@ -1,4 +1,4 @@
-package com.example.diningrestaurant.modelXadapterKasir;
+package com.example.diningrestaurant.modelXadapterDapur;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,23 +14,29 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.diningrestaurant.R;
+import com.example.diningrestaurant.modelXadapterKasir.KasiritemModel;
+import com.example.diningrestaurant.modelXadapterKasir.adapterKasir;
+import com.example.diningrestaurant.modelXadapterKasir.adapterKasiritem;
+import com.example.diningrestaurant.modelXadapterKasir.adapterKasirpopup;
+import com.example.diningrestaurant.modelXadapterKasir.kasirModel;
+import com.example.diningrestaurant.modelXadapterKasir.kasiritempopup;
 import java.util.ArrayList;
 
-public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> {
+public class adapterDapur extends RecyclerView.Adapter<adapterDapur.ViewHolder> {
 
     Context context;
 
     private Activity activity;
-    ArrayList<kasirModel> parentItemArrayList;
-    ArrayList<KasiritemModel> childItemArrayList;
-    ArrayList<kasiritempopup> popupItemArraylist;
-    Button cancelpayment, donepayment;
+    ArrayList<dapurModel> parentItemArrayList;
+    ArrayList<dapuritemModel> childItemArrayList;
+    ArrayList<dapuritemPopup> popupItemArraylist;
+    Button cancelserved, doneserved;
     RecyclerView popup_rv;
-    TextView nomermeja, totalpayment;
+    TextView nomermeja;
 
 
 
-    public adapterKasir(ArrayList<kasirModel> parentItemArrayList, ArrayList<KasiritemModel> childItemArrayList, ArrayList<kasiritempopup> popupItemArraylist) {
+    public adapterDapur(ArrayList<dapurModel> parentItemArrayList, ArrayList<dapuritemModel> childItemArrayList, ArrayList<dapuritemPopup> popupItemArraylist) {
         this.activity = activity;
         this.parentItemArrayList = parentItemArrayList;
         this.childItemArrayList = childItemArrayList;
@@ -41,7 +47,7 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_kasir,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_dapur,parent,false);
 
         return new ViewHolder(view);
     }
@@ -51,15 +57,10 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        kasirModel parentItem = parentItemArrayList.get(position);
-
+        dapurModel parentItem = parentItemArrayList.get(position);
         holder.nomormeja.setText(Integer.toString(parentItem.nomormeja));
-
-        adapterKasiritem adapterMember = new adapterKasiritem(childItemArrayList);
-
-
+        adapterDapuritem adapterMember = new adapterDapuritem(childItemArrayList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
-
 
         holder.nested_rv.setLayoutManager(linearLayoutManager);
         holder.nested_rv.setAdapter(adapterMember);
@@ -68,30 +69,28 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
         holder.cardView.setOnClickListener(e->{
             AlertDialog dialog;
             AlertDialog.Builder builder = new AlertDialog.Builder(e.getContext());
-            View dialogView = LayoutInflater.from(e.getContext()).inflate(R.layout.popupkasir,null);
+            View dialogView = LayoutInflater.from(e.getContext()).inflate(R.layout.popupdapur,null);
 
-            adapterKasirpopup adapterMemberr = new adapterKasirpopup(popupItemArraylist);
+            adapterDapurpopup adapterMemberr = new adapterDapurpopup(popupItemArraylist);
             LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(activity);
-            kasirModel parentItemm = parentItemArrayList.get(position);
-            popup_rv = dialogView.findViewById(R.id.recviewitemkasirpopup);
+            dapurModel parentItemm = parentItemArrayList.get(position);
+            popup_rv = dialogView.findViewById(R.id.recviewitemdapurpopup);
             popup_rv.setLayoutManager(linearLayoutManager1);
             popup_rv.setAdapter(adapterMemberr);
-            totalpayment = dialogView.findViewById(R.id.totalpaymentkasirpopup);
-            totalpayment.setText("Total = Rp. 60.000,-");
             nomermeja = dialogView.findViewById(R.id.nomormejapopup);
             nomermeja.setText(Integer.toString(parentItemm.nomormeja));
 
             builder.setView(dialogView);
             dialog = builder.create();
 
-            cancelpayment = dialogView.findViewById(R.id.button);
-            cancelpayment.setOnClickListener(f->{
+            cancelserved = dialogView.findViewById(R.id.button);
+            cancelserved.setOnClickListener(f->{
                 dialog.dismiss();
             });
 
-            donepayment = dialogView.findViewById(R.id.button2);
-            donepayment.setOnClickListener(f->{
-                Toast.makeText(dialog.getContext(), "pembayaran selesai dilakukan", Toast.LENGTH_SHORT).show();
+            doneserved = dialogView.findViewById(R.id.button2);
+            doneserved.setOnClickListener(f->{
+                Toast.makeText(dialog.getContext(), "pesanan telah disajikan", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             });
 
@@ -110,17 +109,15 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-
         TextView nomormeja;
         RecyclerView nested_rv;
         CardView cardView;
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            nomormeja = itemView.findViewById(R.id.nomormejagrid);
-            nested_rv = itemView.findViewById(R.id.recviewitemkasir);
-            cardView = itemView.findViewById(R.id.reccardview);
+            nomormeja = itemView.findViewById(R.id.nomormejagriddapur);
+            nested_rv = itemView.findViewById(R.id.recviewitemdapur);
+            cardView = itemView.findViewById(R.id.reccardviewdapur);
         }
     }
 

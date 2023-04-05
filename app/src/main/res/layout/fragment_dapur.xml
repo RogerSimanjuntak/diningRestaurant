@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".fragment.DapurFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recdapurfrag"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/menu_slideshow"
-        android:layout_margin="350dp"/>
+        android:layout_height="match_parent" />
 
 </FrameLayout>
