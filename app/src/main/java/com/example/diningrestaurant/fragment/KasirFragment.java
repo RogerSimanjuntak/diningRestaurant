@@ -18,6 +18,7 @@ import com.example.diningrestaurant.modelXadapterKasir.KasiritemModel;
 import com.example.diningrestaurant.R;
 import com.example.diningrestaurant.modelXadapterKasir.adapterKasir;
 import com.example.diningrestaurant.modelXadapterKasir.kasirModel;
+import com.example.diningrestaurant.modelXadapterKasir.kasiritempopup;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,7 @@ public class KasirFragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<kasirModel> parentItemArrayList;
     ArrayList<KasiritemModel> childItemArrayList;
+    ArrayList<kasiritempopup> popupItemArraylist;
 
 
 
@@ -46,6 +48,7 @@ public class KasirFragment extends Fragment {
 
         parentItemArrayList = new ArrayList<>();
         childItemArrayList = new ArrayList<>();
+        popupItemArraylist = new ArrayList<>();
 
         for (int i=0 ; i<nomormeja.length; i++ ){
 
@@ -54,11 +57,14 @@ public class KasirFragment extends Fragment {
 
             if (i < itemdibeli.length) {
                 KasiritemModel childItem = new KasiritemModel(itemdibeli[i], hargaitemdibeli[i]);
+                kasiritempopup popupItem = new kasiritempopup(itemdibeli[i], hargaitemdibeli[i]);
                 childItemArrayList.add(childItem);
+                popupItemArraylist.add(popupItem);
             }
+
         }
 
-        adapterRecycleViewItem = new adapterKasir(parentItemArrayList, childItemArrayList);
+        adapterRecycleViewItem = new adapterKasir(parentItemArrayList, childItemArrayList, popupItemArraylist);
         recyclerView.setAdapter(adapterRecycleViewItem);
         return view;
 
