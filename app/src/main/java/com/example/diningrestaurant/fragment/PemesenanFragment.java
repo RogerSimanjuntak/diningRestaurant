@@ -37,6 +37,7 @@ public class PemesenanFragment extends Fragment {
 String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
     Button addMenu;
     Button deleteMenu;
+    Button doneMenu;
     LinearLayout CardForm;
     AutoCompleteTextView autoCompleteTextViewItem;
     AutoCompleteTextView autoCompleteTextViewMeja;
@@ -76,10 +77,18 @@ String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
 //        });
 
 //        List Item PENUTUP
+        doneMenu = view.findViewById(R.id.buttonSubmit);
         deleteMenu = view.findViewById(R.id.buttondelete);
         addMenu = view.findViewById(R.id.buttonadd);
         CardForm = view.findViewById(R.id.container);
-
+    
+        doneMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Selesai Memesan", Toast.LENGTH_SHORT).show();
+                autoCompleteTextViewMeja.setText("");
+            }
+        });
 
         deleteMenu.setOnClickListener(new View.OnClickListener() {
             @Override

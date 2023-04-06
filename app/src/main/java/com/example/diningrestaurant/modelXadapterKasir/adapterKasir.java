@@ -120,7 +120,7 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
             super(itemView);
             nomormeja = itemView.findViewById(R.id.nomormejagrid);
             nested_rv = itemView.findViewById(R.id.recviewitemkasir);
-            cardView = itemView.findViewById(R.id.reccardview);
+            cardView = itemView.findViewById(R.id.reccardviewkasirr);
         }
     }
 

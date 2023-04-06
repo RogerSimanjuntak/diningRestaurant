@@ -39,7 +39,7 @@ Button cancelButton;
         View view = inflater.inflate(R.layout.fragment_list_item, container, false);
         recyclerView = view.findViewById(R.id.list_food);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setNestedScrollingEnabled(false);
+
 
         layoutManager = new  GridLayoutManager(getActivity(),3);
         recyclerView.setLayoutManager(layoutManager);
