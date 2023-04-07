@@ -2,10 +2,14 @@ package com.example.diningrestaurant.fragment;
 
 import static com.example.diningrestaurant.modelXadapterItem.itemFood.judulItem;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,6 +36,8 @@ public class PemesenanFragment extends Fragment {
 
 String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
     Button addMenu;
+    Button deleteMenu;
+    Button doneMenu;
     LinearLayout CardForm;
     AutoCompleteTextView autoCompleteTextViewItem;
     AutoCompleteTextView autoCompleteTextViewMeja;
@@ -70,8 +77,30 @@ String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
 //        });
 
 //        List Item PENUTUP
+        doneMenu = view.findViewById(R.id.buttonSubmit);
+        deleteMenu = view.findViewById(R.id.buttondelete);
         addMenu = view.findViewById(R.id.buttonadd);
-        CardForm = view.findViewById(R.id.cardForm);
+        CardForm = view.findViewById(R.id.container);
+    
+        doneMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Selesai Memesan", Toast.LENGTH_SHORT).show();
+                autoCompleteTextViewMeja.setText("");
+            }
+        });
+
+        deleteMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int childCount = CardForm.getChildCount();
+                if (childCount > 0) {
+                    View childView = CardForm.getChildAt(childCount - 1);
+                    CardForm.removeView(childView);
+                    autoCompleteTextViewCount--;
+                }
+            }
+        });
         addMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,15 +108,22 @@ String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
             }
         });
 
+
         return view;
     }
     private void addAutoCompleteTextView(){
         AutoCompleteTextView autoCompleteTextView =new AutoCompleteTextView(getContext());
         autoCompleteTextView.setId(View.generateViewId());
-
-        autoCompleteTextView.setHint("Masukkan Makanan Yang sesuai");
+        autoCompleteTextView.setHint("Masukkan Makanan Yang Dipingin");
+        autoCompleteTextView.setThreshold(1);
         adapterItems = new ArrayAdapter<>(getContext(), R.layout.list_item,judulItem);
         autoCompleteTextView.setAdapter(adapterItems);
+        autoCompleteTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                autoCompleteTextView.showDropDown(); // Munculkan dropdown ketika AutoCompleteTextView di-click
+            }
+        });
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -95,6 +131,28 @@ String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
                 Toast.makeText(getContext(), "Kamu Memilih Item " + judulItem, Toast.LENGTH_SHORT).show();
             }
         });
+        autoCompleteTextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+                    // Set background color when clicked
+                    autoCompleteTextView.setBackgroundResource(R.drawable.textfieldradiusclick);
+                } else {
+                    // Set default background color
+                    autoCompleteTextView.setBackgroundResource(R.drawable.textfieldradius);
+                }
+            }
+        });
+
+        autoCompleteTextView.setBackgroundResource(R.drawable.textfieldradius);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        layoutParams.setMargins(0, 16, 0, 16);
+//        layoutParams.gravity = Gravity.CENTER;
+        autoCompleteTextView.setLayoutParams(layoutParams);
         CardForm.addView(autoCompleteTextView);
         autoCompleteTextViewCount++;
     }

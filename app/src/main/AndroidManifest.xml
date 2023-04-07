@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,15 +12,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DiningRestaurant"
-        tools:targetApi="31">
-        <activity
-            android:name=".pages"
-            android:exported="false" />
+        tools:targetApi="31"
+
+        >
+
         <activity
             android:name=".splashscreen.SplashScreen"
             android:exported="true"
+            android:configChanges="orientation|screenSize"
             android:screenOrientation="landscape"
-            android:theme="@style/SplassScreen">
+            android:theme="@style/SplassScreen"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +32,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="landscape">
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape"   >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

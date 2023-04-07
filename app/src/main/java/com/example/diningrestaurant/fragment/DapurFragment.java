@@ -1,5 +1,6 @@
 package com.example.diningrestaurant.fragment;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
