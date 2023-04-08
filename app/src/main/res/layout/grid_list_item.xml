@@ -11,29 +11,35 @@
         app:cardCornerRadius="20dp">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#FDDB00"
+            android:id="@+id/foodimage">
 
             <!-- Media -->
             <ImageView
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_gravity="center|top"
                 android:id="@+id/image_food"
-                android:src="@drawable/burger_item"
+                android:src="@drawable/logolph"
 
                 android:adjustViewBounds="true"
                 android:contentDescription="halo"
                 />
-
+        </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_below="@id/image_food"
+                android:layout_below="@id/foodimage"
                 android:id="@+id/deskripsi_food"
                 android:padding="16dp">
 
@@ -77,7 +83,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
@@ -88,14 +94,15 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/editButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
                         android:layout_marginEnd="8dp"
                         android:text="Ubah Item"
                         app:icon="@drawable/baseline_edit_24" />
 
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="Hapus"
                         android:id="@+id/deleteButton"
                         app:icon="@drawable/baseline_delete_24"

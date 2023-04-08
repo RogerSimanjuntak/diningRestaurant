@@ -87,6 +87,7 @@ String[] nomormeja = {"11", "22", "33", "44", "55", "66", "77", "88"};
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Selesai Memesan", Toast.LENGTH_SHORT).show();
                 autoCompleteTextViewMeja.setText("");
+                CardForm.removeAllViews();
             }
         });
 
