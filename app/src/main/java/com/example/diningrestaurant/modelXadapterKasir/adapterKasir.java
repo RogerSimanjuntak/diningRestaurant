@@ -77,7 +77,7 @@ public class adapterKasir extends RecyclerView.Adapter<adapterKasir.ViewHolder> 
             popup_rv.setLayoutManager(linearLayoutManager1);
             popup_rv.setAdapter(adapterMemberr);
             totalpayment = dialogView.findViewById(R.id.totalpaymentkasirpopup);
-            totalpayment.setText("Total = Rp. 60.000,-");
+            totalpayment.setText("Total = Rp. 108.000,-");
             nomermeja = dialogView.findViewById(R.id.nomormejapopup);
             nomermeja.setText(Integer.toString(parentItemm.nomormeja));
 
