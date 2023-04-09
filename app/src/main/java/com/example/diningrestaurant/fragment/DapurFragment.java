@@ -40,7 +40,7 @@ public class DapurFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_dapur, container, false);
         recyclerView = view.findViewById(R.id.recdapurfrag);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new GridLayoutManager(getActivity(),3);
+        layoutManager = new GridLayoutManager(getActivity(),4);
         recyclerView.setLayoutManager(layoutManager);
 
         Integer[] nomormeja = {11, 22, 33, 44, 55, 66, 77, 88};
