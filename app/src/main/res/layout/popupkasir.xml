@@ -48,9 +48,10 @@
                     android:text="TextView"
                     android:gravity="right"
                     android:layout_marginRight="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginTop="30dp"
                     android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    android:textSize="18dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recviewitemkasirpopup"
@@ -58,7 +59,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
+                    android:paddingTop="15dp"
                     >
 
                 </androidx.recyclerview.widget.RecyclerView>
@@ -77,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:text="Cancel"
                 android:layout_marginLeft="15dp"
-                android:textColor="#FF0000"/>
+                android:backgroundTint="#AEFF2828"
+                android:textColor="@color/white"/>
 
 
             <Space

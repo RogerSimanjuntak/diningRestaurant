@@ -66,7 +66,8 @@
                 android:layout_height="wrap_content"
                 android:text="Cancel"
                 android:layout_marginLeft="15dp"
-                android:textColor="#FF0000"/>
+                android:backgroundTint="#AEFF2828"
+                android:textColor="@color/white"/>
 
 
             <Space
