@@ -14,6 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.diningrestaurant.modelXadapterDapur.dapurModel;
+import com.example.diningrestaurant.modelXadapterDapur.dapuritemModel;
+import com.example.diningrestaurant.modelXadapterDapur.dapuritemPopup;
+import com.example.diningrestaurant.modelXadapterItem.itemFood;
 import com.example.diningrestaurant.modelXadapterKasir.KasiritemModel;
 import com.example.diningrestaurant.R;
 import com.example.diningrestaurant.modelXadapterKasir.adapterKasir;
@@ -42,26 +46,35 @@ public class KasirFragment extends Fragment {
         layoutManager = new GridLayoutManager(getActivity(),4);
         recyclerView.setLayoutManager(layoutManager);
 
+        String[] itemdibeliroger = itemFood.judulItem;
+        String[] hargaitemdibeliroger = itemFood.hargaItem;
         Integer[] nomormeja = {11, 22, 33, 44, 55, 66, 77, 88};
-        String[] itemdibeli = {"Koka Kolha", "Ciken Ayam Goyeng", "Berger Mekdi", "Fat Frais", "Minuman"};
-        String[] hargaitemdibeli = {"Rp. 12.000", "Rp. 12.000", "Rp. 12.000", "Rp. 12.000", "Rp. 12.000"};
 
         parentItemArrayList = new ArrayList<>();
         childItemArrayList = new ArrayList<>();
         popupItemArraylist = new ArrayList<>();
 
-        for (int i=0 ; i<nomormeja.length; i++ ){
+        int indexItem = 0;
+        int indexHarga = 0;
+        int indexNomorMeja = 0;
 
-            kasirModel parentItem = new kasirModel(nomormeja[i]);
+        while (indexNomorMeja < nomormeja.length) {
+            kasirModel parentItem = new kasirModel(nomormeja[indexNomorMeja]);
             parentItemArrayList.add(parentItem);
 
-            if (i < itemdibeli.length) {
-                KasiritemModel childItem = new KasiritemModel(itemdibeli[i], hargaitemdibeli[i]);
-                kasiritempopup popupItem = new kasiritempopup(itemdibeli[i], hargaitemdibeli[i]);
+            if (indexItem < itemdibeliroger.length && indexHarga < hargaitemdibeliroger.length) {
+                KasiritemModel childItem = new KasiritemModel(itemdibeliroger[indexItem], hargaitemdibeliroger[indexHarga]);
+                kasiritempopup popupItem = new kasiritempopup(itemdibeliroger[indexItem], hargaitemdibeliroger[indexHarga]);
                 childItemArrayList.add(childItem);
                 popupItemArraylist.add(popupItem);
+
+                // increment variabel indeks sesuai kebutuhan
+                indexItem += 2;
+                indexHarga += 2;
             }
 
+            // increment variabel indeks untuk nomor meja
+            indexNomorMeja++;
         }
 
         adapterRecycleViewItem = new adapterKasir(parentItemArrayList, childItemArrayList, popupItemArraylist);
