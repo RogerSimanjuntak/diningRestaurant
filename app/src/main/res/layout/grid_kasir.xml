@@ -47,6 +47,17 @@
                 android:layout_marginBottom="10dp"/>
         </androidx.cardview.widget.CardView>
 
+        <TextView
+            android:id="@+id/expandtextkasir"
+            android:layout_gravity="center|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" EXPAND "
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"/>
+
 
     </LinearLayout>
 
