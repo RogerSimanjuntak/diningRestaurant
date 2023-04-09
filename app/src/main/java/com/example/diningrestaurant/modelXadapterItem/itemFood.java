@@ -9,7 +9,7 @@ public class itemFood {
     };
     public static  String [] judulItem = {
             "BIG Burger ","Burger Default"  , "Chicken Default","BIG Fried Chicken","Fried Fries Default",
-            " BIG Fried Fries", "Coca Cola Africano","Es Teh Manis"
+            " BIG Fried Fries", "Coca Cola Africano","Ice Tea Featuring Sugar"
     };
     public static  String [] deskripsiItem = {
             "Burger terkenal dari Los Pollos Hermanos yang Pasti ini enak banget" ,"Burger Default Dengan Rasa yang bukan biasa saja" , "Fried Chicken Dengan Pilihan Bulir- Bulir terbaik dari Jepang","Fried Chicken Dengan Combo yang Mantap khas Mexico",
