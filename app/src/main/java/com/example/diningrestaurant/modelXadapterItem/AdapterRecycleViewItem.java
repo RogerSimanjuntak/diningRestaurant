@@ -47,6 +47,8 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     TextView textHarga;
     ImageView posterFood;
 
+    ImageView foodGambar;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             posterFood = itemView.findViewById(R.id.image_food);
@@ -57,6 +59,7 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
             deleteButton = itemView.findViewById(R.id.deleteButton);
             cancelButton = itemView.findViewById(R.id.cancel_button);
             saveButton = itemView.findViewById(R.id.submitButton);
+//            foodGambar = itemView.findViewById(R.id.editImage);
 
         }
 
@@ -106,7 +109,10 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
         public void onClick(View view ) {
 
             openDialogEdit(view);
-
+            int position = holder.getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                openDialogEdit(position);
+            }
         }
 
     });
@@ -125,6 +131,7 @@ public class AdapterRecycleViewItem  extends RecyclerView.Adapter<AdapterRecycle
     }
 //    EDIT DIALOG PEMBUKA
     public void openDialogEdit(View view){
+
     dialogBuilder = new AlertDialog.Builder(view.getContext());
     View EditpopupView = LayoutInflater.from(view.getContext()).inflate(R.layout.popupedititem,null);
     dialogBuilder.setView(EditpopupView);
@@ -173,7 +180,13 @@ public void cancelDialog(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
 
 }
+    private void openDialogEdit(int position) {
 
+        itemModel item = dataItem.get(position);
+        ImageView foodGambar = dialog.findViewById(R.id.editImage);
+        foodGambar.setImageResource(item.getPoster());
+        // Lakukan sesuatu dengan item yang dipilih, seperti menampilkan dialog edit
+    }
     @Override
     public int getItemCount() {
         return dataItem.size();

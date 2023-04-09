@@ -4,23 +4,52 @@
     tools:showIn = "navigation_view">
 
     <group
-        android:checkableBehavior="single">
+        android:checkableBehavior="single"
+        >
         <item
+            android:enabled="false"
+            android:title=""
+            />
+        <item
+            android:enabled="false"
+            android:title=""
+            />
+        <item
+            android:enabled="false"
+            android:title=""
+            />
+        <item
+
             android:id="@+id/nav_listitem"
             android:icon="@drawable/baseline_food_bank_24"
-            android:title="List Item"/>
+            android:title="List Item"
+            />
+        <item
+            android:enabled="false"
+            android:title=""
+            />
         <item
             android:id="@+id/nav_kasir"
             android:icon="@drawable/baseline_attach_money_24"
-            android:title="Cashier"/>
+            android:title="Cashier"
+            />
+        <item
+            android:enabled="false"
+            android:title=""
+            />
         <item
             android:id="@+id/nav_dapur"
             android:icon="@drawable/baseline_soup_kitchen_24"
             android:title="Kitchen"/>
         <item
+            android:enabled="false"
+            android:title=""
+            />
+        <item
             android:id="@+id/nav_pesan"
             android:icon="@drawable/baseline_restaurant_menu_24"
             android:title="Ordering Customer"/>
+
 
 
     </group>

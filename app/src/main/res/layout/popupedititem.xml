@@ -4,23 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/dialog_bg"
-
     >
 
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    app:layout_constraintTop_toTopOf="parent"
+    android:id="@+id/layoutGambar"
+    android:background="@color/colorPrimary">
     <ImageView
         android:id="@+id/editImage"
-        android:layout_width="238dp"
-        android:layout_height="193dp"
+        android:layout_width="300dp"
+        android:layout_height="260dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.067"
         android:background="@drawable/baseline_food_bank_24" />
-
+</RelativeLayout>
     <com.google.android.material.textfield.TextInputLayout
         style="@style/CardView"
         android:id="@+id/TextItem"
@@ -35,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editImage"
+        app:layout_constraintTop_toBottomOf="@+id/layoutGambar"
         app:startIconDrawable="@drawable/baseline_fastfood_24"
         >
         <com.google.android.material.textfield.TextInputEditText
