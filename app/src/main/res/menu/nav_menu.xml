@@ -6,14 +6,7 @@
     <group
         android:checkableBehavior="single"
         >
-        <item
-            android:enabled="false"
-            android:title=""
-            />
-        <item
-            android:enabled="false"
-            android:title=""
-            />
+
         <item
             android:enabled="false"
             android:title=""
